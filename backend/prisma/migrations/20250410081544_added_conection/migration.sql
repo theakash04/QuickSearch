@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Link" ADD COLUMN     "authorId" TEXT;
+
+-- AddForeignKey
+ALTER TABLE "Link" ADD CONSTRAINT "Link_id_fkey" FOREIGN KEY ("id") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
