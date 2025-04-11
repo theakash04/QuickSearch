@@ -68,12 +68,14 @@ router.post("/google", async (req: Request, res: Response) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "none",
+      path: "/",
     });
 
     res.cookie("refreshToken", refreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "none",
+      path: "/",
     });
 
     res.status(200).json({
@@ -91,8 +93,18 @@ router.post("/google", async (req: Request, res: Response) => {
 });
 
 router.get("/logout", async (req: Request, res: Response) => {
-  res.clearCookie("accessToken");
-  res.clearCookie("refreshToken");
+  res.clearCookie("accessToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "none",
+    path: "/",
+  });
+  res.clearCookie("refreshToken", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "none",
+    path: "/",
+  });
   res.status(200).json({ message: "Logged out successfully" });
 });
 
