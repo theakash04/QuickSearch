@@ -3,6 +3,8 @@ QuickFind is a web application designed to help users save, organize, and redisc
 
 # Watch the  to see QuickFind in action!
 
+https://github.com/user-attachments/assets/ccf3552f-a4e1-4cfb-9a03-b0ab06201889
+
 # Features
 - Personalized Space: Each user has their own private space, accessible via Google login.
 - Save URLs: Users can input URLs of blogs or articles to store their content.
