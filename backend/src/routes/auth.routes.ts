@@ -69,6 +69,7 @@ router.post("/google", async (req: Request, res: Response) => {
       secure: process.env.NODE_ENV === "production",
       sameSite: "none",
       path: "/",
+      maxAge: 60 * 60 * 1000, // 1 hour
     });
 
     res.cookie("refreshToken", refreshToken, {
@@ -76,6 +77,7 @@ router.post("/google", async (req: Request, res: Response) => {
       secure: process.env.NODE_ENV === "production",
       sameSite: "none",
       path: "/",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     });
 
     res.status(200).json({
